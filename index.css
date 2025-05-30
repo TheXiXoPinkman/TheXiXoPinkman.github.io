@@ -1,0 +1,180 @@
+:root {
+  --primary: #1F3B73;        /* Azul petróleo: profesional, sobrio */
+  --secondary: #00BFA6;      /* Verde menta: fresco y moderno */
+  --accent: #FF6B6B;         /* Coral suave: energía en botones o alertas */
+  --light-bg: #F5F7FA;       /* Fondo claro para contrastes */
+  --text-dark: #333333;      /* Texto principal */
+  --hover-blue: #60AFFF;     /* Hover claro */
+
+  /* Opcionalmente conservamos los botones tipo "ventana" */
+  --btn-red: #e74c3c;
+  --btn-yellow: #f1c40f;
+  --btn-green: #4CAF50;
+}
+
+body {
+  background-color: var(--light-bg);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+}
+
+.terminal {
+  width: 100%;
+  max-width: 900px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.terminal-header {
+  background-color: var(--primary);
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-buttons span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.close-btn {
+  background-color: var(--btn-red);
+}
+.min-btn {
+  background-color: var(--btn-yellow);
+}
+.max-btn {
+  background-color: var(--btn-green);
+}
+
+.terminal-title {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  margin-left: 15px;
+}
+
+.terminal-body {
+  padding: 25px;
+  color: var(--text-dark);
+}
+
+.command-line {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.prompt {
+  color: var(--secondary);
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.command {
+  color: var(--primary);
+}
+
+.text-highlight {
+  color: var(--secondary);
+}
+
+.hero {
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+}
+
+.hero h2 {
+  color: var(--secondary);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.skills-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.progress-bar {
+  color: var(--accent);
+  margin-left: 15px;
+  font-size: 0.9rem;
+}
+
+.btn {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 6px 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn:hover {
+  background-color: var(--hover-blue);
+  color: white;
+  border-color: var(--hover-blue);
+}
+
+.link {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .command-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .prompt {
+    margin-bottom: 5px;
+  }
+}
