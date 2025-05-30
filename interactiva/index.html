@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tu_Nombre - Terminal CV</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="terminal">
+    <div class="terminal-header">
+      <div class="terminal-buttons">
+        <span class="close-btn"></span>
+        <span class="min-btn"></span>
+        <span class="max-btn"></span>
+      </div>
+      <span class="terminal-title">tu_nombre@cv-terminal:~</span>
+    </div>
+    
+    <div class="terminal-body" id="terminal-output">
+      <!-- El contenido se generará dinámicamente -->
+      <div class="command-line welcome-message">
+        <p>Bienvenido al Curriculum Terminal de Tu_Nombre</p>
+        <p>Escribe 'help' para ver los comandos disponibles</p>
+      </div>
+    </div>
+    
+    <div class="terminal-input">
+      <span class="prompt">tu_nombre@cv-terminal:~$</span>
+      <input type="text" id="command-input" autofocus />
+    </div>
+  </div>
+
+  <script src="terminal.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+:root {
+  --terminal-bg: #1e1e1e;
+  --terminal-text: #f0f0f0;
+  --terminal-green: #4AF626;
+  --terminal-blue: #3498db;
+  --terminal-yellow: #f1c40f;
+  --terminal-red: #e74c3c;
+  --terminal-purple: #9b59b6;
+  --terminal-margin: 2rem; /* Nuevo: margen personalizable */
+}
+
+body {
+  background-color: #121212;
+  margin: 0;
+  padding: var(--terminal-margin); /* Aplicamos el margen aquí */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Ubuntu Mono', monospace;
+  box-sizing: border-box;
+}
+
+.terminal {
+  width: 100%;
+  height: calc(100vh - 2 * var(--terminal-margin)); /* Altura ajustada */
+  max-width: none; /* Eliminamos el max-width anterior */
+  background-color: var(--terminal-bg);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-body {
+  padding: 20px;
+  color: var(--terminal-text);
+  flex-grow: 1; /* Ocupa todo el espacio disponible */
+  overflow-y: auto;
+  height: auto;
+}
+
+.terminal-header {
+  background-color: #2c2c2c;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-buttons span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.close-btn {
+  background-color: var(--terminal-red);
+}
+.min-btn {
+  background-color: var(--terminal-yellow);
+}
+.max-btn {
+  background-color: var(--terminal-green);
+}
+
+.terminal-title {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-left: 15px;
+}
+
+.terminal-input {
+  padding: 10px 20px;
+  background-color: #2c2c2c;
+  display: flex;
+  align-items: center;
+}
+
+#command-input {
+  background: transparent;
+  border: none;
+  color: var(--terminal-text);
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 1rem;
+  width: 100%;
+  margin-left: 10px;
+  outline: none;
+}
+
+.command-line {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.prompt {
+  color: var(--terminal-green);
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.command {
+  color: var(--terminal-blue);
+}
+
+.text-highlight {
+  color: var(--terminal-green);
+}
+
+.welcome-message {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.welcome-message p {
+  margin: 5px 0;
+}
+
+.help-command {
+  color: var(--terminal-yellow);
+  margin-bottom: 5px;
+}
+
+.help-description {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.file-content {
+  white-space: pre-wrap;
+  margin-left: 20px;
+  line-height: 1.5;
+}
+
+.error-message {
+  color: var(--terminal-red);
+}
+
+.link {
+  color: var(--terminal-blue);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.skills-list {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 20px;
+}
+
+.skills-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.progress-bar {
+  color: var(--terminal-yellow);
+  margin-left: 15px;
+  font-size: 0.9rem;
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Scrollbar personalizada */
+.terminal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+  background: #2c2c2c;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+  background: var(--terminal-blue);
+  border-radius: 4px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+  background: #2980b9;
+}
+/* Estilos para imágenes y arte ASCII */
+.ascii-art {
+  white-space: pre;
+  font-family: 'Ubuntu Mono', monospace;
+  line-height: 1;
+  color: var(--terminal-green);
+  margin: 10px 0 10px 20px;
+  font-size: 0.7rem;
+}
+
+.image-container {
+  margin: 15px 0 15px 20px;
+  border: 1px solid var(--terminal-blue);
+  padding: 5px;
+  display: inline-block;
+  background-color: #2c2c2c;
+}
+
+.terminal-image {
+  max-width: 100%;
+  max-height: 300px;
+  display: block;
+}
+
+/* Para móviles */
+@media (max-width: 768px) {
+  .ascii-art {
+    font-size: 0.5rem;
+    overflow-x: auto;
+  }
+  
+  .terminal-image {
+    max-height: 200px;
+  }
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  :root {
+    --terminal-margin: 1rem; /* Margen más pequeño en móviles */
+  }
+  
+  .terminal {
+    height: calc(100vh - 2 * var(--terminal-margin));
+  }
+  
+  /* Ajustar el tamaño de fuente para mejor legibilidad */
+  body {
+    font-size: 14px;
+  }
+  
+  .terminal-header, 
+  .terminal-input {
+    padding: 8px 15px;
+  }
+  
+  .terminal-body {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --terminal-margin: 0.5rem; /* Margen mínimo en pantallas pequeñas */
+  }
+  
+  /* Ajustes adicionales para móviles muy pequeños */
+  body {
+    padding: var(--terminal-margin);
+    font-size: 12px;
+  }
+}
+
+/* Estilo para el comando show_all */
+.show-all-section {
+  margin-bottom: 30px;
+  border-left: 2px solid var(--terminal-blue);
+  padding-left: 15px;
+}
+
+.show-all-title {
+  color: var(--terminal-purple);
+  margin-bottom: 10px;
+}
+
+/* Estilo para mensajes de descarga */
+.download-message {
+  color: var(--terminal-green);
+  font-style: italic;
+}
